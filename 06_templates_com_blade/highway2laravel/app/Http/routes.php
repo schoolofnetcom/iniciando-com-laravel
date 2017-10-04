@@ -36,6 +36,10 @@ Route::group(['middleware' => ['web']], function () {
         return view('foo.bar');
     });
 
+    Route::get('foo/baz', function () {
+        return view('foo.baz');
+    });
+
     Route::get('foo', function () {
         return "Este método é GET";
     });

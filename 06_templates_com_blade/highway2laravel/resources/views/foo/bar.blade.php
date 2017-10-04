@@ -1,45 +1,23 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Laravel</title>
+@extends('foo.base')
 
-        <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
+@section('title', 'Bar page')
 
-        <style>
-            html, body {
-                height: 100%;
-            }
+@section('container')
+    <h1>Bar page</h1>
+    <p>Texto para <b>bar</b> page</p>
 
-            body {
-                margin: 0;
-                padding: 0;
-                width: 100%;
-                display: table;
-                font-weight: 100;
-                font-family: 'Lato';
-            }
+    <hr>
+    <h3>If</h3>
+    @if(true)
+        Imprime true
+    @endif
 
-            .container {
-                text-align: center;
-                display: table-cell;
-                vertical-align: middle;
-            }
+    <hr>
 
-            .content {
-                text-align: center;
-                display: inline-block;
-            }
-
-            .title {
-                font-size: 96px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="container">
-            <div class="content">
-                <div class="title">Bar.</div>
-            </div>
-        </div>
-    </body>
-</html>
+    <h3>Foreach</h3>
+    <ul>
+    @foreach(['foo', 'bar', 'baz'] as $item)
+        <li>{{ $item }}</li>
+    @endforeach
+    </ul>
+@endsection
